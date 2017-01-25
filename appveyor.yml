@@ -1,0 +1,41 @@
+version: 1.0.{build}
+platform:
+- Any CPU
+- x64
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+nuget:
+  account_feed: true
+  project_feed: true
+build:
+  publish_wap: true
+  publish_azure: true
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  parallel: true
+  verbosity: normal
+test:
+  assemblies:
+  - Asemmbly Auto Path
+  - wildcard
+artifacts:
+- path: Wildcard
+  name: mayadata
+- path: Relative Path
+  name: mayadata
+  type: WebDeployPackage
+notifications:
+- provider: Slack
+  incoming_webhook: https://mayakarya.slack.com/
+  auth_token:
+    secure: rnCprCTR8kwyj0273iQVWhfr2e9g/o6wyMIqXlLF3hs=
+  channel: '@g0t0n9r0y0n9'
+  template: Maya Data a Inovations Apps Both between the importance of online activities and activism in the development of ideas from beginning to ending the embodiment of a successful team building bring product towards global markets.
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
